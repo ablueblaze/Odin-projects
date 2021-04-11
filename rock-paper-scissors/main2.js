@@ -79,20 +79,26 @@ function theWinner(player, compy) {
     }
 }
 
-function playRound(player) {
+function score(player, computer, ties){
+    document.getElementById("playerScore").innerHTML = player;
+    document.getElementById("computerScore").innerHTML = computer;
+    document.getElementById("ties").innerHTML = ties;
+}
 
+function playRound(player) {
+    score(playerWins, computerWins, ties);
     theWinner(playerWins, computerWins);
+    let computerSelection = Math.floor(Math.random() * 3) + 1;
+    let compy = convertCompyPlay(computerSelection);
+    let winner = whoWins(player, compy);
+    winnerCounter(winner);
+    
+    
+    console.log(compyResponse(winner, compy, player));
     if (playerWins == 5 || computerWins == 5){
         console.log(`Final score: Player: ${playerWins}, Computer ${computerWins}, Ties: ${ties}`);
     }
-    
-    let playerSelection = player;
-    let computerSelection = Math.floor(Math.random() * 3) + 1;
-    let compy = convertCompyPlay(computerSelection);
-    let winner = whoWins(playerSelection, compy);
-    winnerCounter(winner);
-    console.log(compyResponse(winner, compy, playerSelection));
-    console.log(`Current score: Player: ${playerWins}, Computer: ${computerWins}, Ties: ${ties}`);
+
 }
 
 

@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <!-- <script src="main.js"></script> -->
     <title>Document</title>
 </head>
 <body>
@@ -13,14 +12,11 @@
         <h1>Welcome Meat Bag!</h1>
         <p>The name of the game is Rock Paper Scissors!!! If you don't know how to play TOUGH!</p>
     </div>
+    <h3>Scores (5 to win):</h3>
     <div class="scoreBox">
-        <h3>Scores (5 to win):</h3>
-        <ul class="scores">
-            <li>Player: </li>
-            <li class="player"></li>
-            <li>Computer</li>
-            <li class="computer"></li>
-        </ul>
+        <p>Player: <span id="playerScore">0</span></p>
+        <p>Computer: <span id="computerScore">0</span></p>
+        <p>Ties: <span id="ties"></span>0</p>
     </div>
     <div class="playButtons">
         <button id="rock">Rock</button>
