@@ -92,12 +92,14 @@ function playRound(player) {
     let compy = convertCompyPlay(computerSelection);
     let winner = whoWins(player, compy);
     winnerCounter(winner);
+    score(playerWins, computerWins, ties);
+
     
     
-    console.log(compyResponse(winner, compy, player));
-    if (playerWins == 5 || computerWins == 5){
-        console.log(`Final score: Player: ${playerWins}, Computer ${computerWins}, Ties: ${ties}`);
-    }
+    // console.log(compyResponse(winner, compy, player));
+    // if (playerWins == 5 || computerWins == 5){
+    //     console.log(`Final score: Player: ${playerWins}, Computer ${computerWins}, Ties: ${ties}`);
+    // }
 
 }
 
