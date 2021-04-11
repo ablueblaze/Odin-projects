@@ -68,15 +68,25 @@ function winnerCounter(winner) {
     }else {  
     } 
 }
+function clearScores(){
+    playerWins = 0;
+    computerWins = 0;
+    ties = 0;
+}
 
-function theWinner(player, compy) {
-    if (player == 5 || compy == 5){
+function theWinner(player, compy, tie) {
+    if (player == 5 || compy == 5 || tie == 5){
         if (player == 5){
-            console.log('Player Wins!')
-        } else {
-            console.log('Computer Wins!')
+            document.getElementById("playerWins").innerHTML = "I'll get you next time meat bag!";
+            
+        } else if(compy == 5){
+            document.getElementById("computerWins").innerHTML = "Ha! I knew you had no game!";
+        } else{
+            document.getElementById("itsATie").innerHTML = "A Tie! That is Unacceptable! Again!";
         }
+        return "gameOver";
     }
+    
 }
 
 function score(player, computer, ties){
@@ -86,13 +96,16 @@ function score(player, computer, ties){
 }
 
 function playRound(player) {
+    if (theWinner(playerWins, computerWins, ties) == "gameOver"){
+        window.location.reload();
+    }else {}
     score(playerWins, computerWins, ties);
-    theWinner(playerWins, computerWins);
     let computerSelection = Math.floor(Math.random() * 3) + 1;
     let compy = convertCompyPlay(computerSelection);
     let winner = whoWins(player, compy);
     winnerCounter(winner);
     score(playerWins, computerWins, ties);
+    theWinner(playerWins, computerWins, ties);
 
     
     
